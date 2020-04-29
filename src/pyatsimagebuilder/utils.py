@@ -63,9 +63,9 @@ def git_clone(url, path, commit_id=None, rm_git=False):
     # Get the hexsha of the current commit
     hexsha = repo.head.commit.hexsha
 
-    if rm_git:
-        # Delete the .git dir to save space after checking out
-        shutil.rmtree(repo.git_dir)
+    # if rm_git:
+    #     # Delete the .git dir to save space after checking out
+    #     shutil.rmtree(repo.git_dir)
 
     return hexsha
 

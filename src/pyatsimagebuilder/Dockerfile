@@ -11,12 +11,7 @@ RUN apt-get update \
  && chmod +x /bin/tini \
  && pip3 install --upgrade --no-cache-dir setuptools pip virtualenv \
  && virtualenv ${{VIRTUAL_ENV}} \
- && ${{VIRTUAL_ENV}}/bin/pip install --no-cache-dir psutil \
- && apt-get remove -y build-essential \
- && apt-get autoremove -y \
- && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+ && ${{VIRTUAL_ENV}}/bin/pip install --no-cache-dir psutil 
 
 {env}
 
